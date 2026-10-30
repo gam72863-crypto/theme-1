@@ -1,0 +1,16 @@
+# Netlify build settings for the A One Enterprises store.
+#
+# `npm run build` produces:
+#   - dist/                         static files (Netlify publish directory)
+#   - .netlify/functions-internal/  the server that renders pages and loads
+#                                   products from Spree. Netlify bundles it
+#                                   automatically; it declares path "/*" and
+#                                   preferStatic, so real files are served
+#                                   first and everything else hits the server.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
