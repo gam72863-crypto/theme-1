@@ -7,11 +7,10 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  // Self-hosted builds (Netlify, and anywhere else outside Lovable) target Netlify
-  // Functions: static files to dist/ plus an SSR function in .netlify/functions-internal.
+  // Self-hosted builds target Vercel: static files plus SSR serverless functions.
   // Inside a Lovable build the platform pins its own Cloudflare preset and output
   // layout, so this override only applies to your own deploys.
-  nitro: { preset: "netlify" },
+  nitro: { preset: "vercel" },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
